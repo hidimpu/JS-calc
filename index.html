@@ -1,0 +1,131 @@
+<html>
+<head>
+     <script>
+      function insert(num)
+       {
+         document.form.textview.value= document.form.textview.value + num;
+       }
+       
+       function equal()
+         {
+           var exp = document.form.textview.value
+           if (exp)
+             { document.form.textview.value = eval(exp);
+             }
+         }
+       
+       function clean()
+       {
+         document.form.textview.value= "";
+         
+       }
+       
+       function back()
+        {
+          var exp = document.form.textview.value
+          document.form.textview.value = exp.substring (0,exp.length-1)
+          
+        }
+       
+        </script>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+     
+      .*{
+        margin: 0;
+        padding: 0;
+      } 
+      
+      .button {
+        height: 50px;
+        width:50px;
+        margin: 2px;
+        font-size:25px;
+        cursor: pointer;
+        font-family: 'Open Sans';
+        
+        
+background: rgb(148,148,149);
+background: radial-gradient(circle, rgba(148,148,149,1) 0%, rgba(209,145,241,0.6250700109145221) 100%);
+      }
+      
+      .textview {
+          width: 217px;
+          margin: 4px;
+          font-size: 25px;
+          padding: 5px;
+          border : none;
+         font-family: 'Open Sans';
+          
+      }
+      
+      .main {
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-family: 'Open Sans';
+        font-size: 22px;
+      }
+      
+      .bss
+      {
+       
+        height:100vh;
+        background: rgb(32,0,44);
+        background: linear-gradient(90deg, rgba(32,0,44,1) 8%, rgba(203,180,212,1) 85%);
+        font-family: 'Open Sans';
+       
+      }
+   
+       
+        </style>    
+ </head>
+  
+<body>
+  <div class = "bss"> </div>
+      <div class = "main">
+
+   <form name="form" >
+        <input class = "textview" name= "textview"> 
+     </form>
+
+    <table >
+        <tr> 
+            <td> <input class ="button" type = "button" value = "C" onclick="clean()" > </td>
+            <td> <input class ="button" type = "button" value = "<" onclick="back()" > </td>
+            <td> <input class ="button" type = "button" value = "*" onclick="insert('*')" > </td>
+            <td> <input class ="button" type = "button" value = "/" onclick="insert('/')" >  </td>
+        </tr>
+        <tr> 
+            <td> <input class ="button" type = "button" value = "7" onclick="insert(7)" > </td>
+            <td> <input class ="button" type = "button" value = "8" onclick="insert(8)" > </td>
+            <td> <input class ="button" type = "button" value = "9" onclick="insert(9)" > </td>
+            <td> <input class ="button" type = "button" value = "-" onclick="insert('-')" > </td>
+        </tr>
+        <tr> 
+            <td> <input class ="button" type = "button" value = "4" onclick="insert(4)" > </td>
+            <td> <input class ="button" type = "button" value = "5" onclick="insert(5)" > </td>
+            <td> <input class ="button" type = "button" value = "6" onclick="insert(6)" > </td>
+            <td> <input class ="button" type = "button" value = "+" onclick="insert('+')" > </td>
+        </tr>
+        <tr> 
+            <td> <input class ="button" type = "button" value = "1" onclick="insert(1)" > </td>
+            <td> <input class ="button" type = "button" value = "2" onclick="insert(2)" > </td>
+            <td> <input class ="button" type = "button" value = "3" onclick="insert(3)" > </td>
+            <td rowspan="5"> <input class ="button" style="height:110px" type = "button" value = "=" onclick="equal()"> </td>
+        </tr>
+        <tr> 
+            <td colspan =2 > <input class ="button" style ="width:108px" type = "button" value = "0" onclick="insert(0)" > </td>
+            <td> <input class ="button" type = "button" value = "." onclick="insert(.)" > </td>
+           
+        </tr>  
+      
+    </table> 
+         Made with ❤️ by Parth
+ </div>   
+  
+
+
+</body>
+</html>
